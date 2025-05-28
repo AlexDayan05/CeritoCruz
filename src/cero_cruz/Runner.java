@@ -8,6 +8,10 @@ public class Runner {
 			public void run() {
 				try {
 					Tablero t = new Tablero();
+					for(int i = 0; i < 9; i++){
+						t.addCelda(new Celda(""));
+					}
+					
 					Interfaz frame = new Interfaz(t);
 					frame.setVisible(true);
 				} catch (Exception e) {
