@@ -36,8 +36,10 @@ public class Interfaz extends JFrame {
                 if (row >= 0 && column >= 0) {
                     int celdaSeleccionada = row * 3 + column;
                     Celda celda = tablero.getCelda(celdaSeleccionada); 
-                    tablero.siguienteTurno(celda);
-                    model.setValueAt(celda.getTexto(), row, column); 
+                    if(celda.getTexto().equals("")){
+                    	tablero.siguienteTurno(celda);
+                        model.setValueAt(celda.getTexto(), row, column); 
+                    }   
                 }
             }
         });
