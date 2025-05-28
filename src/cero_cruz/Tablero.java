@@ -16,7 +16,12 @@ public class Tablero {
 	}
 	
 	public void comprobarEstado(){
-		
+		if(comprobarVD()){
+			
+		}
+		else if(comprobarEmpate()){
+			
+		}
 	}
 	
 	public boolean comprobarVD(){
@@ -26,7 +31,6 @@ public class Tablero {
 	
 	public boolean comprobarEmpate(){
 		return false;
-		
 	}
 	
 	public void siguienteTurno(Celda celda){
