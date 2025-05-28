@@ -18,14 +18,21 @@ public class Interfaz extends JFrame {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(420, 420);
 
-        String[] columnNames = {"", "", ""};
-        final DefaultTableModel model = new DefaultTableModel(columnNames, 0);
-        final JTable table = new JTable(model);
+        final DefaultTableModel model = new DefaultTableModel(new Object[][] {
+                {"", "", ""},
+                {"", "", ""},
+                {"", "", ""}
+            }, new String[]{"", "", ""}) {
+				private static final long serialVersionUID = 1L;
 
-        table.setRowHeight(140);
-        for (int i = 0; i < 3; i++) {
-            model.addRow(new Object[]{"", "", ""});
-        }
+				@Override
+                public boolean isCellEditable(int row, int column) {
+                    return false;
+                }
+            };
+
+            final JTable table = new JTable(model);
+            table.setRowHeight(140);
 
         table.addMouseListener(new MouseAdapter() {
             @Override
