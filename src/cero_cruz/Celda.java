@@ -3,8 +3,6 @@ package cero_cruz;
 public class Celda {
 	public String texto;
 
-
-
 	public Celda(String texto) {
 		setTexto(texto);
 	}

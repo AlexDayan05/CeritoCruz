@@ -7,6 +7,7 @@ public class Tablero {
 	private int turno;
 	
 	public Tablero(){
+		turno = 0;
 		celdas = new ArrayList<>();
 	}
 	
@@ -28,7 +29,17 @@ public class Tablero {
 		
 	}
 	
-	public void siguienteTurno(){
+	public void siguienteTurno(Celda celda){
+		if(turno%2 == 0){
+			celda.setTexto("X");
+		}
+		else{
+			celda.setTexto("0");
+		}
 		turno++;
+	}
+
+	public Celda getCelda(int i) {
+		return celdas.get(i);
 	}
 }
